@@ -35,8 +35,7 @@ GET /privacy-expiration?today={today}&terms={terms}&privacies={privacies}
 
 - `privacy-expiration`이라는 폴더에 API를 구현하였습니다.
 
-- dto : `오늘날짜(today)`, `약관 유효기간의 정보(terms)`, `개인정보의 정보(privacies)` 매개변수는 쿼리파라미터로 받을 수 있도록 구현하였습니다. 이 3가지 쿼리파라미터는 하나의 QueryDto 안에서 관리할 수 있도록 커스텀하였습니다. 각 매개변수는 각각의 타입과 필수여부를 체크하여 QueryDto 안에서 class-validator를 사용하여 컨트롤러 진입 전에 검증되도록 구현하였습니다.
-
+- dto : `오늘날짜(today)`, `약관 유효기간의 정보(terms)`, `개인정보의 정보(privacies)` 매개변수는 쿼리파라미터로 받을 수 있도록 구현하였습니다. 이 3가지 쿼리파라미터는 하나의 QueryDto 안에서 관리할 수 있도록 커스텀하였습니다. 각 매개변수는 각각의 타입과 필수여부를 체크하여 QueryDto 안에서 class-validator를 사용하여 컨트롤러 진입 전에 검증되도록 구현하였습니다. 시간상 이유로 문제에 명시된 모든 제한사항을 전부 DTO에서 유효성 검사를 실시하진 않았고, 각 파라미터당 2~3개 정도의 유효성 검사가 이루어지도록 구현하였습니다.
 - controller : API 구현과제라는 의미에 맞춰 MVC 패턴을 사용하여 컨트롤러 단에서 요청을 받고, 문제 해결 로직은 서비스 단으로 분리하였습니다.
 
 - service : 싱글톤 패턴을 사용하는 NestJS에 맞게 `PrivacyExpirationService`이라는 싱글톤 서비스를 정의하고 문제를 해결에 필요한 메소드들을 최대한 객체지향적으로 구현하고자 하였습니다.
