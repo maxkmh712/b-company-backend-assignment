@@ -8,7 +8,7 @@ SQL 문제 3개는 sql 폴더 하위에 SQL raw Query를 사용하여 구현하�
 
 ---
 
-## [ API 로컬 테스트 방법 ]
+## [ 로컬 테스트 방법 ]
 
 ### 1. 해당 레포지토리 클론
 
@@ -21,7 +21,6 @@ $ yarn install
 ### 3. 로컬 서버 실행
 
 ```bash
-# watch mode
 $ yarn run start:local
 ```
 
