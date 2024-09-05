@@ -1,0 +1,7 @@
+-- 문제 6. 재구매 회원 리스트
+
+SELECT O.USER_ID, O.PRODUCT_ID
+FROM ONLINE_SALE O
+GROUP BY O.USER_ID, O.PRODUCT_ID -- 유저ID로 그룹화하고, 상품ID로 그룹화해서
+HAVING COUNT(*) > 1 -- 그것의 갯수가 2개 이상이어야 재구매
+ORDER BY O.USER_ID ASC, O.PRODUCT_ID DESC;
